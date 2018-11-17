@@ -21,6 +21,7 @@
 					<show id="kscontrol:multiple-object" />
 					<show id="kscontrol:simple-aspect" />
 					<show id="kscontrol:simple-authority" />
+					<show id="kscontrol:simple-authority-container"/>
 					<show id="kscontrol:multiple-person" />
 				</field-visibility>
 				<appearance>
