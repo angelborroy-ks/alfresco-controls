@@ -1,90 +1,88 @@
 <alfresco-config>
 
-    <config evaluator="string-compare" condition="DocumentLibrary">
-        <aspects>
-            <visible>
-                <aspect name="kscontrol:sampleAssocs"/>
-             </visible>
-         <addable>
-         </addable>
-         <removeable>
-         </removeable>                
-        </aspects>
-    </config>
+	<config evaluator="string-compare" condition="DocumentLibrary">
+		<aspects>
+			<visible>
+				<aspect name="kscontrol:sampleAssocs" />
+			</visible>
+			<addable>
+			</addable>
+			<removeable>
+			</removeable>
+		</aspects>
+	</config>
 
-    <config evaluator="aspect" condition="kscontrol:sampleAssocs">
-        <forms>
-            <form>
-                <field-visibility>
-                    <show id="kscontrol:simple-doc"/>
-                    <show id="kscontrol:multiple-folder"/>
-                    <show id="kscontrol:multiple-object"/>
-                    <show id="kscontrol:simple-aspect"/>
-                    <show id="kscontrol:simple-authority"/>
-                    <show id="kscontrol:multiple-person"/>
-                </field-visibility>
-                <appearance>
-                
-                     <!-- 
-                       It's not required to declare a control for every field.
-                       Share will provide the right control depending on Content Model.
-                     -->
-                
-                   	<!-- Showing parameters for Association control: 
-                   	     showTargetLink, rootNode, allowNavigationToContentChildren and displayMode -->
-                   	<field id="kscontrol:multiple-folder" label-id="assoc.kscontrol_multiple-folder">
+	<config evaluator="aspect" condition="kscontrol:sampleAssocs">
+		<forms>
+			<form>
+				<field-visibility>
+					<show id="kscontrol:simple-doc" />
+					<show id="kscontrol:multiple-folder" />
+					<show id="kscontrol:multiple-object" />
+					<show id="kscontrol:simple-aspect" />
+					<show id="kscontrol:simple-authority" />
+					<show id="kscontrol:multiple-person" />
+				</field-visibility>
+				<appearance>
+
+					<!-- It's not required to declare a control for every field. Share will 
+						provide the right control depending on Content Model. -->
+
+					<!-- Showing parameters for Association control: showTargetLink, rootNode, 
+						allowNavigationToContentChildren and displayMode -->
+					<field id="kscontrol:multiple-folder"
+						label-id="assoc.kscontrol_multiple-folder">
 						<control template="/org/alfresco/components/form/controls/association.ftl">
-						
-						    <!-- Allow the user to navigate to node in the control itself
-						         By default is set to FALSE -->
-						    <control-param name="showTargetLink">true</control-param>
-						    
-						    <!--
-						    
-						      Start location for Picker Control.
-						      
-						      NodeLocatorService expression:
-							      alfresco://company/home      
-							      alfresco://user/home         
-							      alfresco://company/shared    
-							      alfresco://sites/home
-							  
-							  Share expression:       
-							      {companyhome}
-                                  {userhome}
-                                  {siteshome}
-                                  {doclib}
-                                  {self}
-                                  {parent}
-							       
-							  NodeRef > workspace://.../...
-							            
-							  XPath   > /app:company_home/cm:...
-							       
-							-->						    
+
+							<!-- Allow the user to navigate to node in the control itself 
+							     By default is set to FALSE -->
+							<control-param name="showTargetLink">true</control-param>
+
+							<!-- Start location for Picker Control.
+							 
+							     NodeLocatorService expression: 
+								   alfresco://company/home 
+								   alfresco://user/home 
+								   alfresco://company/shared 
+								   alfresco://sites/home
+								    
+								  Share expression: 
+								    {companyhome}
+								    {userhome}
+								    {siteshome}
+								    {doclib}
+								    {self}
+								    {parent}
+								     
+								  NodeRef > workspace://.../... 
+								  
+								  XPath > /app:company_home/cm:... 
+						    -->
 							<control-param name="rootNode">{siteshome}</control-param>
-							
+
 							<!-- Allow the user to navigate to children of content nodes in the Picker popup. 
 							     By default is set to FALSE -->
-							<control-param name="allowNavigationToContentChildren">true</control-param>
-							
-							<!--Allow the user to manage the items in the control itself. 
-							    Includes description and modified metadata. 
-							    By default is set to ITEMS -->
+							<control-param
+								name="allowNavigationToContentChildren">true</control-param>
+
+							<!--Allow the user to manage the items in the control itself. Includes 
+								description and modified metadata. 
+								By default is set to ITEMS -->
 							<control-param name="displayMode">list</control-param>
-							
+
 						</control>
 					</field>
-					
+
 					<!-- Authority control has no parameters -->
-					<field id="kscontrol:multiple-person" label-id="assoc.kscontrol_multiple-person">
-					    <control template="/org/alfresco/components/form/controls/authority.ftl" />
+					<field id="kscontrol:multiple-person"
+						label-id="assoc.kscontrol_multiple-person">
+						<control template="/org/alfresco/components/form/controls/authority.ftl" />
 					</field>
-					
-                </appearance>
-            </form>
-         </forms>
-    </config>
+
+				</appearance>
+			</form>
+		</forms>
+	</config>
 
 
 </alfresco-config>
