@@ -23,3 +23,5 @@ Sample Content Model is included in aspect `kscontrol:sampleAssocs`:
 * Multiple association with person nodes
 
 Share Forms are using `association.ftl` and `authority.ftl` controls by default depending on target class. Also configuration parameters are provided.
+
+![Share controls (association & authority)](https://user-images.githubusercontent.com/1818300/48659951-a66dc200-ea59-11e8-8368-f26522d4b2d0.png)
